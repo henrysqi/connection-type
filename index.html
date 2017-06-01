@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>test</h1>
+
+     <script src="detectSpeed.js"></script>
+     <script>
+      detectSpeed.startSpeedCheck (
+        'www.henryqi.me',
+        function callback(timings){
+          console.log(timings)
+
+          alert("latency speed class: " + timings.latencySpeedClass.name)
+          alert("through put speed class: " + timings.throughPutSpeedClass.name)
+        }
+      );
+     </script>
+  </body>
+</html>
