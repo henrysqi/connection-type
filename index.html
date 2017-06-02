@@ -7,6 +7,8 @@
   </head>
   <body>
 
+    <span id="ip"></span>
+
 <!-- check if mobile ================================================================= -->
   <script>
     var mobilecheck = function() {
@@ -18,35 +20,45 @@
     mobilecheck()
   </script>
 
+<!-- network information API ==================================================================== -->
+  <!--<script>
+    navigator.connection.addEventListener('typechange', function(){
+      alert(navigator.connection.type);
+    });
+  </script>-->
+
+
+<!-- webRTC =================================================================================== -->
+  <script src="webRTC.js"></script>
 
 
 <!-- check latency/throughput speed ========================================================== -->
 
-    <!--<script src="detectSpeed.js"></script>-->
+  <!--<script src="detectSpeed.js"></script>-->
 
 
 <!-- check ip ========================================================== -->
 
-    <!--<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script>
-      $(document).ready(function() {
-        $.get("http://ip-api.com/json", function(data, status){
-          document.write(data.isp)
-          document.write(data.query)
-        });
-      })
-    </script>-->
+  <!--<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      $.get("http://ip-api.com/json", function(data, status){
+        document.write(data.isp)
+        document.write(data.query)
+      });
+    })
+  </script>-->
 
-    <!--<script type="application/javascript">
-      function getIP(json) {
-        document.write("My public IP address is: ", json.ip);
-      }
-    </script>
-    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>-->
+  <!--<script type="application/javascript">
+    function getIP(json) {
+      document.write("My public IP address is: ", json.ip);
+    }
+  </script>
+  <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>-->
 
-    <!--<script src="checkIP.js"></script>-->
+  <!--<script src="checkIP.js"></script>-->
 
-    <!--<script src="bundle.js"></script>-->
+  <!--<script src="bundle.js"></script>-->
 
 
   </body>
