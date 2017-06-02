@@ -33,9 +33,11 @@ app.get('/api/test', function(req, res){
         if (alias >= 1) {
         // this single interface has multiple ipv4 addresses
         console.log(ifname + ':' + alias, iface.address);
+        res.send(ifname + ':' + alias, iface.address)
         } else {
         // this interface has only one ipv4 adress
         console.log(ifname, iface.address);
+        res.send((ifname, iface.address))
         }
         ++alias;
     });
