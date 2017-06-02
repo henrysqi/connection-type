@@ -1,8 +1,8 @@
-/**
- * Get the user IP throught the webkitRTCPeerConnection
- * @param onNewIP {Function} listener function to expose the IP locally
- * @return undefined
- */
+// /**
+//  * Get the user IP throught the webkitRTCPeerConnection
+//  * @param onNewIP {Function} listener function to expose the IP locally
+//  * @return undefined
+//  */
 function getUserIP(onNewIP) { //  onNewIp - your listener function for new IPs
     //compatibility for firefox and chrome
     var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
@@ -42,5 +42,5 @@ function getUserIP(onNewIP) { //  onNewIp - your listener function for new IPs
 // Usage
 
 getUserIP(function(ip){
-		document.getElementById("ip").innerHTML = 'Got your IP ! : '  + ip + " | verify in http://www.whatismypublicip.com/";
+		document.getElementById("webRTC").innerHTML = 'Private IP using webRTC: '  + ip + " | verify in http://www.whatismypublicip.com/";
 });
