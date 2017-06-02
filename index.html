@@ -8,6 +8,8 @@
   <body>
 
     <span id="ip"></span>
+    <p id="ipv4"></p>
+    <p id="ipv6"></p>
 
 <!-- check if mobile ================================================================= -->
   <script>
@@ -29,7 +31,7 @@
 
 
 <!-- webRTC =================================================================================== -->
-  <script src="webRTC.js"></script>
+  <!--<script src="webRTC.js"></script>-->
 
 
 <!-- check latency/throughput speed ========================================================== -->
@@ -37,7 +39,19 @@
   <!--<script src="detectSpeed.js"></script>-->
 
 
-<!-- check ip ========================================================== -->
+<!-- check ip ===================================================================== -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      $.get("http://v4.ipv6-test.com/api/myip.php?json", function(data, status){
+        document.getElementById("ipv4").innerHTML = "ipv4 address: " + data.address
+      });
+      $.get("http://v6.ipv6-test.com/api/myip.php?json", function(data, status){
+        document.getElementById("ipv6").innerHTML = "ipv6 address: " + data.address
+      });
+    })
+  </script>
 
   <!--<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
   <script>
