@@ -8,10 +8,14 @@
   <body>
 
     <p id="isMobile"></p>
-    <span id="ip"></span>
+    
     <p id="ipv4"></p>
     <p id="ipv6"></p>
+    
+    <br><br>
 
+    <p id="publicip"></p>
+    <p id="isp"></p>
 <!-- check if mobile ================================================================= -->
   <script>
     var mobilecheck = function() {
@@ -44,12 +48,36 @@
   <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
   <script>
     $(document).ready(function() {
-      $.get("http://v4.ipv6-test.com/api/myip.php?json", function(data, status){
-        document.getElementById("ipv4").innerHTML = "ipv4 address: " + data.address
+      // $.get("http://v4.ipv6-test.com/api/myip.php?json", function(data, status){
+      //   document.getElementById("ipv4").innerHTML = "ipv4 address: " + data.address
+      // });
+      // $.get("http://v6.ipv6-test.com/api/myip.php?json", function(data, status){
+      //   document.getElementById("ipv6").innerHTML = "ipv6 address: " + data.address
+      // });
+      $.ajax({
+        url: 'http://v4.ipv6-test.com/api/myip.php?json',
+        dataType: 'jsonp',
+        success: function(data){
+          document.getElementById("ipv4").innerHTML = "ipv4 address: " + data.address
+        }
       });
-      $.get("http://v6.ipv6-test.com/api/myip.php?json", function(data, status){
-        document.getElementById("ipv6").innerHTML = "ipv6 address: " + data.address
+      $.ajax({
+        url: 'http://v6.ipv6-test.com/api/myip.php?json',
+        dataType: 'jsonp',
+        success: function(data){
+          document.getElementById("ipv6").innerHTML = "ipv6 address: " + data.address
+        }
       });
+
+      $.ajax({
+        method: "GET",
+        url: "http://ip-api.com/json",
+      }).done(function( data ) {
+        document.getElementById("publicip").innerHTML = "Public IP: " + data.query
+        document.getElementById("isp").innerHTML = "ISP: " + data.isp
+      })
+
+
     })
   </script>
 
