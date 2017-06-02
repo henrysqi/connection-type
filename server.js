@@ -14,6 +14,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/api/test', function(req, res){
+    res.send("hello")
+})
+
+app.get('/api/ip', function(req, res){
 //   res.send("hello")
 
     'use strict';
