@@ -1,17 +1,7 @@
 var express = require('express');
-var bodyParser = require('body-parser');
-var cors = require('cors');
-
 var port = 3000;
+var app = express();
 
-var app = require('express')();
-var bodyParser = require('body-parser');
-
-// add a new middleware to your application with the help of BodyParser
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json
-app.use(bodyParser.json());
 
 app.get('/api/test', function(req, res){
     res.send("hello")
@@ -52,7 +42,7 @@ app.get('/api/ip', function(req, res){
 })
 
 app.listen(port, function(){
-  console.log("listening on port", port)
+  console.log("listening on port: ", port)
 })
 
 module.exports = app;
